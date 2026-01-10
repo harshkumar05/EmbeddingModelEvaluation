@@ -2,6 +2,7 @@ import ollama
 import numpy as np
 from tests import isotropyScore
 from tests.geometry import Isotropy
+
 def get_gemma_embedding(text):
     response = ollama.embed(
         model='embeddinggemma:latest',
@@ -17,6 +18,8 @@ def get_cosine_similarity(a, b):
 word1 = "man"
 word2 = "programming"
 print(get_gemma_embedding(word1))
+word1 = "spider"
+word2 = "programming"
 
 
 vec1 = get_gemma_embedding(word1)
@@ -37,4 +40,10 @@ matrix = [list_a, list_b]
 isotropyScore.test_isotropy(matrix)
 Isotropy = Isotropy(matrix)
 print(Isotropy)
+
+print("word1: ", word1)
+print("word2: ", word2)
+print(f"Similarity: {get_cosine_similarity(vec1, vec2):.4f}")
+
+
 #print(get_cosine_similarity(x, y))
