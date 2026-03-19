@@ -1,0 +1,12 @@
+2 The Context Similarity (STS) Reference Table
+The Source Paper: "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks" (Reimers & Gurevych, 2019)
+
+This paper is the "Bible" for sentence embeddings. The researchers proved that standard LLMs (like raw BERT) are actually terrible at comparing sentences until they are specially fine-tuned.
+
+(Note: STS scores are generally higher than SimLex scores because full sentences provide more clues for the math to grab onto).
+
+Era,Model Architecture,STS Spearman Score,What it means for your test
+"The ""Bag of Words"" Era",Averaged Word2Vec / GloVe,0.55 - 0.60,Models that just average words together without understanding grammar. (Your 🟡 > 0.50 threshold).
+The Raw LLM Flaw (2018),BERT (Out-of-the-box),0.46 - 0.55,"Surprise! Standard BERT fails STS because it suffers from the ""Anisotropy"" cone problem."
+The SBERT Revolution,Sentence-BERT / RoBERTa,0.85 - 0.88,Models trained specifically for semantic search. This is why your code requires a 🟢 > 0.80 for a perfect grade.
+Modern SOTA (2024+),"BGE-Large, Nomic, OpenAI",0.88 - 0.92+,"These models rarely fall for the ""Syntax Trap"" (Dog chased cat vs. Cat chased dog)."
