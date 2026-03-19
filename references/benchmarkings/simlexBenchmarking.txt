@@ -1,0 +1,9 @@
+1. The Word Meaning Similarity (SimLex-999) Reference Table
+The Source Paper: "SimLex-999: Evaluating Semantic Models with (Genuine) Similarity Estimation" (Hill, Reichart, Korhonen, 2015)
+
+SimLex is notoriously difficult because of the antonym trap. Even the best models in the world rarely score above a 0.75.
+
+The Floor (2013-2014),GloVe & Word2Vec,0.37 - 0.44,"This is the baseline of ""acceptable."" If  modern model scores below this, it is performing worse than 10-year-old math."
+The Transition (2018),Standard BERT (Base),~0.50 - 0.55,Early LLMs improved context but still struggled with static word pairs out of the box.
+State of the Art (2020+),Sentence-BERT (SBERT),0.65 - 0.70,Models specifically trained to understand similarity. This is the 🟢 > 0.60 threshold in your code.
+Modern Giants (2024+),OpenAI / Cohere APIs,0.70 - 0.75+,The absolute ceiling of current AI capabilities on this specific dataset.
